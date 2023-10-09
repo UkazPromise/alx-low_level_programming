@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -10,8 +9,7 @@
  * @n: number of element to concatenate from s2
  * Return: Pointer to the new allocated memory
  */
-
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n) 
 {
     char *result;
     unsigned int len1 = 0, len2 = 0, i, j;
@@ -51,7 +49,7 @@ int main(void)
     char *result = string_nconcat(s1, s2, 7);
 
     if (result == NULL) {
-        printf("\n");
+        printf("Failed to allocate memory\n");
         return 1;
     }
 
@@ -59,3 +57,4 @@ int main(void)
     free(result);
     return 0;
 }
+

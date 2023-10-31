@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <elf.h>
-#include <sys/types.h>
+#include <stdarg.h>
 
 /**
  * exit_with_message - Print an error message and exit with a specific code.
@@ -16,7 +16,7 @@ void exit_with_message(int code, const char *format, ...)
     va_list args;
 
     va_start(args, format);
-    dprintf(2, format, args);
+    vfprintf(stderr, format, args);
     va_end(args);
     exit(code);
 }
@@ -72,5 +72,6 @@ int main(int ac, char **av)
     if (close(file_descriptor) == -1)
         exit_with_message(98, "Error: Can't close fd %d\n", file_descriptor);
 
-    return (0);
+    return 0;
 }
+

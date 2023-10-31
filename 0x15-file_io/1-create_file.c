@@ -1,4 +1,6 @@
 #include "main.h"
+#include <string.h>
+
 
 /**
  * create_file - Create a file with specified permissions and write text content.
